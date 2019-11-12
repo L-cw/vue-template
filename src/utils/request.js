@@ -3,7 +3,6 @@ import { Message } from 'element-ui'
 import codeConfig from '@/utils/codeConfig'
 
 // 创建axios实例
-console.log('process.env.VUE_APP_BASE_API,', process.env.VUE_APP_BASE_API)
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url
   timeout: 5000 // 请求超时时间
