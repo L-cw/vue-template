@@ -1,5 +1,9 @@
 <template>
   <div class="other-page">
+    <div class="other-item">这里显示的是 Vuex 中 testStr 的值： {{ testStr }} </div>
+    <div class="other-item">
+      点击 <el-button class="change-btn" @click="handleChangeTestStr">按钮</el-button> 将 testStr 的值改为 This is a pen.
+    </div>
     <div class="other-item">插值显示{{ value }}</div>
     <div class="other-item" @click="handleClick">点击方法</div>
     <div
@@ -17,6 +21,11 @@ export default {
       value: 'message'
     }
   },
+  computed: {
+    testStr () {
+      return this.$store.getters.testStr
+    }
+  },
   mounted () {
     this.init()
   },
@@ -31,6 +40,9 @@ export default {
     },
     handleClick () {
       console.log('触发了点击事件')
+    },
+    handleChangeTestStr () {
+      this.$store.commit('SET_TEST_STR', 'This is a pen.')
     }
   }
 }
@@ -38,9 +50,15 @@ export default {
 
 <style lang="less" scoped>
   .other-page {
-    padding-top: 20px;
+    padding-top: 60px;
     & .other-item {
       margin-bottom: 20px;
+    }
+    & .change-btn {
+      width: 60px;
+      height: 30px;
+      margin: 0;
+      padding: 0;
     }
   }
 </style>

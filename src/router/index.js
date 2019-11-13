@@ -16,10 +16,6 @@ const routes = [
           require(['@/views/index/index.vue'], resolve)
         },
         title: '首页',
-        meta: {
-          title: '首页',
-          requireAuth: false
-        },
         name: 'Index'
       },
       {

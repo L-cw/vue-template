@@ -1,6 +1,7 @@
 <template>
   <div class="list-page content">
     <el-table
+      v-loading="loading"
       class="list-table"
       :data="tableData"
       style="width: 100%">
@@ -34,6 +35,7 @@ export default {
   name: '',
   data () {
     return {
+      loading: false,
       tableData: [{
         date: '2016-05-02',
         name: '王小虎',
@@ -63,13 +65,17 @@ export default {
   },
   methods: {
     getList () {
+      this.loading = true
       getSysUserListApi({
         pageStart: this.page.start
       }).then(res => {
+        this.loading = false
         if (this.$codeConfig.ERROR_CODE.SUCCESS === res.errCode) {
           this.tableData = res.data.list
           this.page = res.data.page
         }
+      }).catch(err => {
+        this.loading = false
       })
     },
     handleSizeChange(val) {

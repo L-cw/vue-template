@@ -37,7 +37,6 @@ service.interceptors.response.use(
     }
   },
   error => {
-    console.log('121123123123', error)
     console.log('err' + error) // for debug
     Message({
       message: '网络错误',

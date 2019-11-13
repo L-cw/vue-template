@@ -5,11 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    testStr: 'This is a book.'
   },
   mutations: {
+    SET_TEST_STR: (state, str) => {
+      state.testStr = str
+    }
   },
-  actions: {
-  },
-  modules: {
+  getters: {
+    testStr: state => state.testStr
   }
 })

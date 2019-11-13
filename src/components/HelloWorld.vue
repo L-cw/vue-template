@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <div class="other-item">这里显示的是 Vuex 中 testStr 的值： {{ testStr }}</div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -37,6 +38,11 @@ export default {
     msg: {
       type: String,
       default: ''
+    }
+  },
+  data () {
+    return {
+      testStr: this.$store.getters.testStr
     }
   }
 }

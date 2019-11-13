@@ -58,6 +58,7 @@ export default {
         line-height: @header-height;
         padding: 0 20px;
         cursor: pointer;
+        user-select: none;
         &.router-link-active {
           color: @theme-color;
           &:after {
