@@ -31,11 +31,11 @@ export default {
   },
   methods: {
     init () {
-      let str1 = ''
+      const str1 = ''
       const PI = 3.14
       const obj1 = { a: 1 }
       const obj2 = { b: 2 }
-      let obj3 = { ...obj1, ...obj2 }
+      const obj3 = { ...obj1, ...obj2 }
       console.log(obj1, obj2, obj3, PI, str1)
     },
     handleClick () {

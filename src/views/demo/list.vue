@@ -7,25 +7,21 @@
       style="width: 100%">
       <el-table-column
         prop="date"
-        label="日期">
-      </el-table-column>
+        label="日期" />
       <el-table-column
         prop="name"
-        label="姓名">
-      </el-table-column>
+        label="姓名" />
       <el-table-column
         prop="address"
-        label="地址">
-      </el-table-column>
+        label="地址" />
     </el-table>
     <el-pagination
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
       :current-page.sync="page.start"
       :page-size="page.size"
       layout="total, prev, pager, next"
-      :total="page.total">
-    </el-pagination>
+      :total="page.total"
+      @size-change="handleSizeChange"
+      @current-change="handleCurrentChange" />
   </div>
 </template>
 
@@ -75,14 +71,15 @@ export default {
           this.page = res.data.page
         }
       }).catch(err => {
+        console.log(err)
         this.loading = false
       })
     },
-    handleSizeChange(val) {
-      console.log(`每页 ${val} 条`);
+    handleSizeChange (val) {
+      console.log(`每页 ${val} 条`)
     },
-    handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
+    handleCurrentChange (val) {
+      console.log(`当前页: ${val}`)
     }
   }
 }
