@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { getSysUserListApi } from '@/api/system'
+import { getSysUserListApi } from '@/api/user'
 export default {
   name: '',
   data () {

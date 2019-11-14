@@ -10,6 +10,7 @@
         <router-link class="nav-item" exact tag="div" to="/demo/form">form</router-link>
         <router-link class="nav-item" exact tag="div" to="/demo/list">list</router-link>
         <router-link class="nav-item" exact tag="div" to="/demo/other">other</router-link>
+        <router-link class="nav-item" exact tag="div" to="/demo/node">node</router-link>
       </div>
     </div>
   </div>

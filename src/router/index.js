@@ -15,7 +15,6 @@ const routes = [
         component: resolve => {
           require(['@/views/index/index.vue'], resolve)
         },
-        title: '首页',
         name: 'Index'
       },
       {
@@ -23,7 +22,6 @@ const routes = [
         component: resolve => {
           require(['@/views/demo/form.vue'], resolve)
         },
-        title: 'Demo',
         name: 'Demo'
       },
       {
@@ -31,7 +29,6 @@ const routes = [
         component: resolve => {
           require(['@/views/demo/list.vue'], resolve)
         },
-        title: 'List',
         name: 'List'
       },
       {
@@ -39,8 +36,21 @@ const routes = [
         component: resolve => {
           require(['@/views/demo/other.vue'], resolve)
         },
-        title: 'Other',
         name: 'Other'
+      },
+      {
+        path: '/demo/node',
+        component: resolve => {
+          require(['@/views/demo/applyNetNode.vue'], resolve)
+        },
+        name: 'ApplyNetNode'
+      },
+      {
+        path: '/node/index',
+        component: resolve => {
+          require(['@/views/node/index.vue'], resolve)
+        },
+        name: 'nodeIndex'
       }
     ]
   },

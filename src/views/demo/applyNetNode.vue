@@ -1,11 +1,19 @@
 <template>
-  <div class="form-page content">
-    <div class="operate-btn" @click="showUserOperateDialog = true">点击在弹窗中显示表单</div>
-    <el-dialog title="新增系统用户" :visible.sync="showUserOperateDialog">
+  <div class="apply-net-node-page content">
+    <div class="title">立即申请成为网关节点</div>
+    <div class="form-box">
       <el-form
         ref="addForm"
         :model="addForm"
         :rules="addRules">
+        <el-form-item
+          label="单选框："
+          :label-width="formLabelWidth"
+          align="left"
+          prop="radio">
+          <el-radio v-model="addForm.radio" label="1">备选项</el-radio>
+          <el-radio v-model="addForm.radio" label="2">备选项</el-radio>
+        </el-form-item>
         <el-form-item
           label="用户名："
           :label-width="formLabelWidth"
@@ -51,45 +59,26 @@
           :loading="operateLoading"
           @click="confirmOperateUser('addForm')">提交</el-button>
       </div>
-    </el-dialog>
-    <div class="form-box">
-      <el-form
-        ref="loginForm"
-        :model="loginForm">
-        <el-form-item
-          label="私钥："
-          :label-width="formLabelWidth"
-          prop="userName">
-          <el-input
-            v-model="loginForm.privKey"
-            autocomplete="new-password"
-            placeholder="请输入私钥" />
-        </el-form-item>
-      </el-form>
+    </div>
+    <div class="notice-box">
+      <div class="notice-title">注意事项：</div>
       <div
-        slot="footer"
-        class="dialog-footer">
-        <el-button
-          type="primary"
-          :loading="loginLoading"
-          @click="handleLoginByPrivKey('loginForm')">验证</el-button>
-      </div>
+        v-for="(item, index) in noticeList"
+        :key="index"
+        class="notice-item">{{ item }}</div>
     </div>
   </div>
 </template>
 
 <script>
-import { addSysUserApi } from '@/api/user'
-import { checkStr } from '@/utils/tools'
 export default {
-  name: '',
+  name: 'ApplyNetNode',
   data () {
     return {
       operateLoading: false,
-      loginLoading: false,
-      showUserOperateDialog: false,
       formLabelWidth: '120px',
       addForm: {
+        radio: '',
         userName: '',
         initPassword: '',
         realName: '',
@@ -116,64 +105,30 @@ export default {
           { required: true, message: '请输入昵称', trigger: 'blur' }
         ]
       },
-      loginForm: {
-        privKey: ''
-      }
+      noticeList: [
+        '注意事项：注意事项：注意事项：注意事项：注意事项：注意事项：',
+        '注意事项：注意事项：注意事项：注意事项：注意事项：注意事项：',
+        '注意事项：注意事项：注意事项：注意事项：注意事项：注意事项：',
+        '注意事项：注意事项：注意事项：注意事项：注意事项：注意事项：',
+        '注意事项：注意事项：注意事项：注意事项：注意事项：注意事项：',
+        '注意事项：注意事项：注意事项：注意事项：注意事项：注意事项：',
+        '注意事项：注意事项：注意事项：注意事项：注意事项：注意事项：'
+      ]
     }
   },
   mounted () {
 
   },
   methods: {
-    confirmOperateUser (formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          this.operateLoading = true
-          addSysUserApi(
-            this.addForm
-          ).then(res => {
-            this.operateLoading = false
-            if (this.$codeConfig.ERROR_CODE.SUCCESS === res.errCode) {
-              this.showUserOperateDialog = false
-              this.$refs[formName].resetFields()
-              this.$message.success('新增用户成功')
-            }
-          }).catch(err => {
-            console.log(err)
-            this.operateLoading = false
-          })
-        } else {
-          console.log('error submit!!')
-          return false
-        }
-      })
-    },
-    handleLoginByPrivKey (formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          // this.loginLoading = true
-          // 此处填写表单校验成功之后的逻辑
-        } else {
-          console.log('error submit!!')
-          return false
-        }
-      })
-    }
+
   }
 }
 </script>
 
 <style lang="less" scoped>
-  .form-page {
-    & .operate-btn {
-      margin-top: 100px;
-      font-size: 24px;
-      margin-bottom: 30px;
-      font-weight: 600;
-      cursor: pointer;
-      &:hover {
-        color: @theme-color;
-      }
+  .apply-net-node-page {
+    & .form-box {
+      padding: 0 40px;
     }
   }
 </style>

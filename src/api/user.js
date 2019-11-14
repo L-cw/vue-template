@@ -8,7 +8,7 @@ export function getSysUserListApi (data) {
   return request({
     url: '/user/list',
     method: 'post',
-    data
+    data: { pageStart: 1, pageSize: 10 }
   })
 }
 
