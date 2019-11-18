@@ -3,14 +3,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import ElementUI from 'element-ui'
-import VueClipboard from 'vue-clipboard2'
-import CopyText from '@/components/CopyText'
+import { Button, Input } from 'element-ui'
+import lang from 'element-ui/lib/locale/lang/en'
+import locale from 'element-ui/lib/locale'
 import codeConfig from '@/utils/codeConfig'
 
-Vue.use(ElementUI)
-Vue.use(VueClipboard)
-Vue.component('copy-text', CopyText)
+locale.use(lang)
+Vue.use(Button)
+Vue.use(Input)
 
 import filters from './utils/filter'
 Object.keys(filters).forEach(key => {
