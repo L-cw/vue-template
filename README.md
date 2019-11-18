@@ -1,4 +1,5 @@
-# over-chain
+# vue-template
+This is a template of VueCli3. You can use this template to start a project so quickly.
 
 ## Project setup
 ```
