@@ -1,4 +1,4 @@
-# over-chain
+# canal-fe
 
 ## Project setup
 ```
