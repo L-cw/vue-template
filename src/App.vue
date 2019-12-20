@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="scss">
 #app {
   width: 100%;
   font-size: 14px;

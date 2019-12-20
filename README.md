@@ -1,5 +1,5 @@
 # vue-template
-This is a template of VueCli3. You can use this template to start a project so quickly.
+这是一个基于 VueCli3 和 elementUI 的模版，集成了普通项目开发需要用到的基本配置，便于快速搭建前端项目。
 
 ## Project setup
 ```
@@ -8,7 +8,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run dev
 ```
 
 ### Compiles and minifies for production

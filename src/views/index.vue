@@ -1,5 +1,8 @@
 <template>
-  <div>Index</div>
+  <div class="index-page">
+    <div class="temp-text">This is Index Page!</div>
+    <el-button type="primary">验证主题色是否改变</el-button>
+  </div>
 </template>
 
 <script>
@@ -19,6 +22,13 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-
+<style lang="scss" scoped>
+  .index-page {
+    & .temp-text {
+      margin: 100px auto;
+      font-size: 20px;
+      font-weight: 600;
+      color: #00d080;
+    }
+  }
 </style>

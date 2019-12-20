@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style scoped lang="scss">
 .miss-page-cont{
   background: #fff;
   overflow: hidden;
