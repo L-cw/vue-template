@@ -14,11 +14,13 @@ import codeConfig from '@/utils/codeConfig'
 locale.use(lang)
 Vue.use(ElementUI)
 
-import filters from './utils/filter'
+import filtersCommon from './utils/filters/index'
+import filtersEnum from './utils/filters/fmtEnum'
+const filters = { ...filtersCommon, ...filtersEnum }
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
-Vue.prototype.$codeConfig = codeConfig
+
 Vue.config.productionTip = false
 
 new Vue({

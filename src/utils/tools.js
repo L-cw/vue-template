@@ -81,13 +81,3 @@ export function getUrlBase64(url, ext, callback) {
     canvas = null;
   };
 }
-
-// 是否为正整数
-export function isPositiveInteger (value) {
-  var patrn = /^[1-9]\d*$/
-  if (patrn.exec(value) === null || value === '') {
-    return false
-  } else {
-    return true
-  }
-}
