@@ -35,3 +35,102 @@
   width: 1180px;
   margin: 0 auto;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.link,
+.btn {
+  color: $theme-color;
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    color: $theme-color;
+  }
+}
+.link+.link,
+.btn+.btn {
+  margin-left: 10px;
+}
+
+.flex {
+  display: flex;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-align-center {
+  align-items: center;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// 公共文字样式
+.title-text {
+  @include title-text;
+}
+.main-text {
+  @include main-text;
+}
+.tips-text {
+  @include tips-text;
+}
+
+/* 分页器容器 */
+.pagination-box {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* 左右信息展示
+ * <div class="lr-info-item">
+ *   <div class="lr-info-label"></div>
+ *   <div class="lr-info-value"></div>
+ * </div>
+*/
+.lr-info-item {
+  display: flex;
+  margin-bottom: 16px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .lr-info-label {
+    width: 140px;
+    margin-right: 20px;
+    line-height: 1.5;
+    font-size: $ft-size-main;
+    flex-shrink: 0;
+    color: #666;
+  }
+  .lr-info-value {
+    flex: 1;
+    color: #000;
+    word-break: break-all;
+    line-height: 1.5;
+    font-size: $ft-size-main;
+    &-item {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      font-size: $ft-size-main;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

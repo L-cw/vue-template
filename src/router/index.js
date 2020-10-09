@@ -6,8 +6,9 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    component: resolve => {
-      require(['@/views/index.vue'], resolve)
+    component: () => import('@/views/index.vue'),
+    meta: {
+      title: '首页'
     }
   },
   {

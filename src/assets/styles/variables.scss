@@ -4,7 +4,30 @@ $footer-height: 70px; /* 底栏高度 */
 /* 主题色 */
 $theme-color: #00d080;
 
-/* font-size */
+/* font-color */
 $ft-color-title: #333; /* 标题文字颜色 */
 $ft-color-main: #666; /* 正文文字颜色 */
-$ft-color-tip: #999; /* tip 文字颜色 */
+$ft-color-tips: #999; /* tip 文字颜色 */
+
+/* font-size */
+$ft-size-title: 16px; /* 标题文字大小 */
+$ft-size-main: 14px; /* 正文文字大小 */
+$ft-size-tips: 12px; /* tips文字大小 */
+
+@mixin title-text {
+  font-size: $ft-size-title;
+  color: $ft-color-title;
+  font-weight: 600;
+}
+
+@mixin main-text {
+  font-size: $ft-size-main;
+  color: $ft-color-main;
+  font-weight: 400;
+}
+
+@mixin tips-text {
+  font-size: $ft-size-tips;
+  color: $ft-color-tips;
+  font-weight: 400;
+}

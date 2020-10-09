@@ -12,11 +12,12 @@ export default {
    * @return {String} 返回字符串
    */
   fmtEnum (code, enumObjStr) {
-    if (!codeConfig.hasOwnProperty(enumObjStr)) {
+    if (!codeConfig[enumObjStr]) {
+      console.error(`未知的枚举字符串 ${enumObjStr} ，请检查拼写`)
       return '--'
     }
     const enumObj = codeConfig[enumObjStr]
-    for (let key in enumObj) {
+    for (const key in enumObj) {
       if (enumObj[key].CODE === code) {
         return enumObj[key].MSG
       }

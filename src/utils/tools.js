@@ -81,3 +81,16 @@ export function getUrlBase64(url, ext, callback) {
     canvas = null;
   };
 }
+
+/**
+ * @description: 获取页签标题
+ * @param {String} pageTitle 当前页面的标题，一般为 meta.title
+ * @return {String} 页签title
+ */
+const TITLE = require('@/config.js').TITLE
+export function getPageTitle(pageTitle) {
+  if (pageTitle) {
+    return `${pageTitle} - ${TITLE}`
+  }
+  return `${TITLE}`
+}

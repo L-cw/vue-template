@@ -1,9 +1,14 @@
+// import { TITLE } from './src/config.js'
+const TITLE = require('./src/config.js').TITLE
+
 const path = require('path')
+const port = 23333
 module.exports = {
   lintOnSave: process.env.NODE_ENV !== 'production',
   productionSourceMap: false,
   devServer: {
     open: true,
+    port: port,
     overlay: {
       warnings: false,
       errors: true
@@ -17,6 +22,12 @@ module.exports = {
         }
       }
     }
+  },
+
+  configureWebpack: {
+    // provide the app's title in webpack's name field, so that
+    // it can be accessed in index.html to inject the correct title.
+    name: TITLE
   },
 
   pluginOptions: {
